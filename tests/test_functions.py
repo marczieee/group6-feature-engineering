@@ -77,7 +77,8 @@ class TestDeriveComputedColumns:
         expected = (original['salary'] * 0.10).round(2)
         pd.testing.assert_series_equal(
             df['annual_bonus'].reset_index(drop=True),
-            expected.reset_index(drop=True)
+            expected.reset_index(drop=True),
+            check_names=False
         )
 
     def test_salary_level_valid_values(self, df):
